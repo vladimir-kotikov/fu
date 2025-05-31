@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
     "target": "ES2023",
-    "module": "CommonJS",
+    "module": "NodeNext",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "outDir": "dist",
     "declaration": true,
-    "rootDir": "src",
+    "rootDir": "src"
   },
 }

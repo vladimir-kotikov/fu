@@ -1,7 +1,38 @@
 {
   "name": "fu",
   "version": "1.0.0",
-  "main": "dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.js"
+    },
+    "./operators": {
+      "types": "./dist/operators.d.ts",
+      "require": "./dist/operators.js",
+      "import": "./dist/operators.js"
+    },
+    "./promise": {
+      "types": "./dist/promise.d.ts",
+      "require": "./dist/promise.js",
+      "import": "./dist/promise.js"
+    },
+    "./list": {
+      "types": "./dist/list.d.ts",
+      "require": "./dist/list.js",
+      "import": "./dist/list.js"
+    },
+    "./function": {
+      "types": "./dist/function.d.ts",
+      "require": "./dist/function.js",
+      "import": "./dist/function.js"
+    },
+    "./dict": {
+      "types": "./dist/dict.d.ts",
+      "require": "./dist/dict.js",
+      "import": "./dist/dict.js"
+    }
+  },
   "author": {
     "email": "kotikov.vladimir@gmail.com",
     "name": "Vladimir Kotikov",
