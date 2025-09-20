@@ -12,10 +12,10 @@
       "require": "./dist/operators.js",
       "import": "./dist/operators.js"
     },
-    "./promise": {
-      "types": "./dist/promise.d.ts",
-      "require": "./dist/promise.js",
-      "import": "./dist/promise.js"
+    "./promises": {
+      "types": "./dist/promises.d.ts",
+      "require": "./dist/promises.js",
+      "import": "./dist/promises.js"
     },
     "./list": {
       "types": "./dist/list.d.ts",
