@@ -39,7 +39,8 @@
     "url": "https://github.com/vladimir-kotikov/fu"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "test": "echo Ok"
   },
   "license": "MIT",
   "description": "Yet another functional library for Typescript",
