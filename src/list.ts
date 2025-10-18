@@ -1,4 +1,4 @@
-type Fn<T, R> = (value: T) => R;
+type Comparator<T> = (a: T, b: T) => number;
 
 export function oneOf<T>(values: T[]): (value: T) => boolean;
 export function oneOf<T>(values: T[], value: T): boolean;
@@ -48,26 +48,20 @@ export const filter =
 
 export const flat = <T>(arr: T[][]): T[] => arr.flat();
 
-type SortFn<T> = (a: T, b: T) => number;
-
 export const desc =
-  <T>(fn: SortFn<T>): SortFn<T> =>
+  <T>(fn: Comparator<T>): Comparator<T> =>
   (a, b) =>
     fn(b, a);
 
-export const byValue =
+export const compareBy =
   <T>(keyFn: (obj: T) => {}) =>
   (a: T, b: T) =>
     keyFn(b) < keyFn(a) ? -1 : keyFn(b) > keyFn(a) ? 1 : 0;
 
-export const byProperty = <T extends { [key: string | number]: {} }>(
-  propertyName: keyof T
-) => byValue((obj: T) => obj[propertyName]);
-
-export const sortByValue =
+export const sort =
   <T>(keyFn: (obj: T) => object) =>
   (arr: T[]): T[] =>
-    arr.toSorted(byValue(keyFn));
+    arr.toSorted(compareBy(keyFn));
 
 export const toDict =
   <const T, const K extends string | number>(keyFn: (obj: T) => K) =>
@@ -77,21 +71,7 @@ export const toDict =
       return acc;
     }, {} as Record<K, T>);
 
-export const unique =
+export const uniq =
   <const T, const K extends string | number>(keyFn: (obj: T) => K) =>
   (arr: T[]): T[] =>
     Object.values(toDict(keyFn)(arr));
-
-export const isUnique = <const T, const K extends string | number>(
-  keyFn: Fn<T, K>
-): Fn<T, boolean> => {
-  const cache = {} as Record<K, any>;
-  return item => {
-    const key = keyFn(item);
-    if (cache[key]) {
-      return false;
-    }
-    cache[key] = true;
-    return true;
-  };
-};
