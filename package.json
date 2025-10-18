@@ -38,8 +38,11 @@
     "name": "Vladimir Kotikov",
     "url": "https://github.com/vladimir-kotikov/fu"
   },
+  "scripts": {
+    "build": "tsc"
+  },
   "license": "MIT",
-  "description": "",
+  "description": "Yet another functional library for Typescript",
   "dependencies": {
     "@swan-io/boxed": "^3.2.0"
   },

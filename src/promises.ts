@@ -12,8 +12,6 @@ export const settledOnly = <T>(p: Promise<T>[]) =>
   allSettled(p).then(
     compose(
       map<PromiseFulfilledResult<T>, T>(res => res.value),
-      filter<PromiseSettledResult<T>, PromiseFulfilledResult<T>>(
-        res => res.status === "fulfilled"
-      )
+      filter<PromiseSettledResult<T>>(res => res.status === "fulfilled")
     )
   );
