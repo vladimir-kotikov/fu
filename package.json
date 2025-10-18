@@ -1,6 +1,6 @@
 {
-  "name": "fu",
-  "version": "0.0.2",
+  "name": "@vladimir-kotikov/fu",
+  "version": "0.0.3",
   "license": "MIT",
   "description": "Yet another functional library for Typescript",
   "repository": {
@@ -10,7 +10,7 @@
   "author": {
     "email": "kotikov.vladimir@gmail.com",
     "name": "Vladimir Kotikov",
-    "url": "https://github.com/vladimir-kotikov/fu"
+    "url": "https://github.com/vladimir-kotikov"
   },
   "scripts": {
     "build": "tsc",
@@ -19,6 +19,9 @@
   },
   "dependencies": {
     "@swan-io/boxed": "^3.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
   },
   "exports": {
     ".": {
@@ -55,9 +58,6 @@
   "files": [
     "dist"
   ],
-  "devDependencies": {
-    "typescript": "^5.8.3"
-  },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   }
